@@ -1,0 +1,318 @@
+/* -----------------------------------------
+   Rahul Kumar Portfolio - Responsive Design
+-------------------------------------------- */
+
+/* Large screens scaling */
+@media (min-width: 1600px) {
+    .nav-container,
+    .hero-container,
+    .section-container,
+    .footer-container {
+        max-width: 1400px;
+    }
+}
+
+/* Medium Desktop / Laptop (under 1200px) */
+@media (max-width: 1200px) {
+    .nav-container {
+        padding: 0 30px;
+    }
+    
+    .section-container {
+        padding: 0 30px;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+    }
+
+    .hero-visual {
+        height: 450px;
+    }
+
+    .floating-card {
+        width: 240px;
+    }
+    
+    .floating-card.c3 {
+        width: 220px;
+    }
+}
+
+/* Tablets (under 992px) */
+@media (max-width: 992px) {
+    section {
+        padding: 80px 0;
+    }
+    
+    .navbar {
+        height: 70px;
+        --nav-height: 70px;
+    }
+    
+    .hero-section {
+        height: auto;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .hero-content {
+        align-items: center;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-visual {
+        height: 380px;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .hero-image-frame {
+        width: 280px;
+        height: 360px;
+        top: 20px;
+        transform: translateX(-50%);
+    }
+    
+    .floating-card {
+        width: 220px;
+    }
+
+    .floating-card.c1 {
+        top: 240px;
+        left: -20px;
+    }
+
+    .floating-card.c2 {
+        top: 290px;
+        right: -20px;
+    }
+
+    .floating-card.c3 {
+        top: 350px;
+        left: calc(50% - 110px);
+    }
+
+    /* Timeline Adjustments to single-column */
+    .timeline-track {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        align-self: flex-start;
+        justify-content: flex-start;
+        padding-left: 50px;
+        margin-bottom: 40px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        align-self: flex-start;
+        justify-content: flex-start;
+        margin-left: 0;
+        padding-left: 50px;
+    }
+    
+    .timeline-marker {
+        left: 20px !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .timeline-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Architecture stack */
+    .architecture-display {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-details-panel {
+        height: auto;
+        min-height: 250px;
+    }
+
+    /* API Explorer */
+    .api-explorer {
+        grid-template-columns: 1fr;
+    }
+    
+    .explorer-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+    }
+
+    .api-routes-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .api-route-btn {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    /* Contact stacked */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* About section stacked */
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-visual {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (under 768px) */
+@media (max-width: 768px) {
+    .nav-menu,
+    .nav-actions .nav-cta {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card-image-wrapper {
+        height: 180px;
+    }
+
+    /* Node map scaling on mobile */
+    .arch-canvas {
+        height: 480px;
+        overflow-x: auto;
+    }
+
+    .arch-node {
+        padding: 8px 12px;
+    }
+
+    .node-name {
+        font-size: 0.8rem;
+    }
+    
+    #node-nextjs { top: 5%; left: 5%; }
+    #node-nginx { top: 5%; left: 55%; }
+    #node-django { top: 35%; left: 55%; }
+    #node-drf { top: 35%; left: 10%; }
+    #node-redis { top: 65%; left: 10%; }
+    #node-postgres { top: 65%; left: 55%; }
+    #node-docker { top: 85%; left: 5%; }
+    #node-cicd { top: 85%; left: 55%; }
+
+    .drawer-scroll-wrap {
+        padding: 40px 24px;
+    }
+
+    .drawer-title {
+        font-size: 1.8rem;
+    }
+
+    .drawer-stats-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .terminal-body {
+        height: 320px;
+    }
+    
+    .contact-card {
+        padding: 24px;
+    }
+}
+
+/* Small Screens (under 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .skills-filter,
+    .projects-filter {
+        gap: 8px;
+    }
+
+    .filter-btn,
+    .project-filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+    }
+
+    .terminal-prompt {
+        font-size: 0.75rem;
+    }
+    
+    .terminal-hidden-input,
+    .terminal-styled-input {
+        font-size: 0.75rem;
+    }
+}

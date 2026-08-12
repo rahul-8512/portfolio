@@ -1,0 +1,115 @@
+/* -----------------------------------------
+   Rahul Kumar Portfolio - Animations
+-------------------------------------------- */
+
+/* Preloader Log Line Slide In */
+@keyframes fadeLog {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing Blink Cursor */
+@keyframes blinkCursor {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-primary) }
+}
+
+/* Status Indicator pulsing dot */
+@keyframes markerPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    }
+    70% {
+        transform: scale(1.3);
+        box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+/* Floating Cards Float Movement */
+@keyframes floatAnim {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Hero Scroll Mouse Indicator Wheel */
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 15px);
+    }
+}
+
+/* Card Pulse Glow */
+@keyframes cardPulse {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* Connectors Dash Streaming (Architecture lines) */
+@keyframes dashAnim {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+/* Radar Location ping rings */
+@keyframes radarRipple {
+    0% {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* Terminal typing cursor blink */
+@keyframes cursorBlink {
+    from, to { background-color: transparent }
+    50% { background-color: var(--accent-secondary) }
+}
+
+/* Button hover ripple effect overlay keyframe (for simulated ripples) */
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Glow Pulse for titles */
+.glow-text-anim {
+    animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.1);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(6, 182, 212, 0.3), 0 0 30px rgba(6, 182, 212, 0.2);
+    }
+}

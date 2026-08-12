@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Rahul Kumar | Python Backend Engineer & Architect</title>
+    <meta name="description" content="Senior Python Backend Engineer specializing in Django, scalable REST APIs, Docker, databases, and microservices architecture. Explore my interactive developer portfolio.">
+    <meta name="keywords" content="Python, Django, Backend Developer, API, Postgres, Docker, Redis, Developer Portfolio">
+    <meta name="author" content="Rahul Kumar">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rahul Kumar | Python Backend Engineer & Architect">
+    <meta property="og:description" content="Sleek, interactive engineering portfolio and backend playground. Django, Redis, PostgreSQL, and robust systems architecture.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Background Mouse Glow Canvas/Grid -->
+    <div class="bg-grid"></div>
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <!-- Loading Preloader Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-header">
+                <span class="preloader-dot red"></span>
+                <span class="preloader-dot yellow"></span>
+                <span class="preloader-dot green"></span>
+                <span class="preloader-title">rahul@backend:~$ boot_system</span>
+            </div>
+            <div class="preloader-body">
+                <div class="preloader-log" id="preloader-log">
+                    <p class="log-line">> Initiating system startup...</p>
+                    <p class="log-line">> Loading environment variables...</p>
+                    <p class="log-line">> Connecting to PostgreSQL database on port 5432... SUCCESS</p>
+                    <p class="log-line">> Initializing Redis cache store... SUCCESS</p>
+                    <p class="log-line">> Spawning Django WSGI worker threads... SUCCESS</p>
+                    <p class="log-line">> Loading assets, styles, and web workers...</p>
+                </div>
+                <div class="preloader-progress-bar-container">
+                    <div class="preloader-progress-bar" id="preloader-progress"></div>
+                </div>
+                <div class="preloader-status">System ready. Launching portfolio UI...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- 1. Premium Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Rahul.K</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active" data-sec="hero">Home</a>
+                <a href="#dashboard" class="nav-link" data-sec="dashboard">Stats</a>
+                <a href="#about" class="nav-link" data-sec="about">About</a>
+                <a href="#skills" class="nav-link" data-sec="skills">Skills</a>
+                <a href="#experience" class="nav-link" data-sec="experience">Timeline</a>
+                <a href="#projects" class="nav-link" data-sec="projects">Projects</a>
+                <a href="#architecture" class="nav-link" data-sec="architecture">Architecture</a>
+                <a href="#api-playground" class="nav-link" data-sec="api-playground">API</a>
+                <a href="#terminal-section" class="nav-link" data-sec="terminal-section">Terminal</a>
+                <a href="#contact" class="nav-link" data-sec="contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#contact" class="nav-cta">Let's Connect</a>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle Mobile Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <nav class="mobile-menu">
+            <a href="#hero" class="mobile-link" data-sec="hero">Home</a>
+            <a href="#dashboard" class="mobile-link" data-sec="dashboard">Stats</a>
+            <a href="#about" class="mobile-link" data-sec="about">About</a>
+            <a href="#skills" class="mobile-link" data-sec="skills">Skills</a>
+            <a href="#experience" class="mobile-link" data-sec="experience">Timeline</a>
+            <a href="#projects" class="mobile-link" data-sec="projects">Projects</a>
+            <a href="#architecture" class="mobile-link" data-sec="architecture">Architecture</a>
+            <a href="#api-playground" class="mobile-link" data-sec="api-playground">API</a>
+            <a href="#terminal-section" class="mobile-link" data-sec="terminal-section">Terminal</a>
+            <a href="#contact" class="mobile-link" data-sec="contact">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-wrapper">
+        
+        <!-- 2. Hero Section -->
+        <section class="hero-section" id="hero">
+            <canvas id="particles-canvas" class="hero-particles"></canvas>
+            <div class="hero-container">
+                <div class="hero-content scroll-reveal fade-up">
+                    <div class="status-badge">
+                        <span class="pulse-indicator"></span>
+                        <span class="status-text">Available for Python / Django contracts</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Building Resilient <br>
+                        <span class="gradient-text">Backend Systems</span>
+                    </h1>
+                    
+                    <h2 class="hero-subtitle">
+                        I am a <span class="typing-text" id="typing-text"></span><span class="typed-cursor">|</span>
+                    </h2>
+                    
+                    <p class="hero-desc">
+                        Hi, I'm <strong>Rahul Kumar</strong>. I specialize in designing and engineering high-throughput REST APIs, robust microservices, caching structures, and database engines. Focused on execution speed, architecture cleanliness, and clean deployment pipelines.
+                    </p>
+                    
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get Resume</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="mailto:smartyrahul8696@gmail.com" class="social-icon-btn" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floating Glass Cards in Hero -->
+                <div class="hero-visual scroll-reveal fade-left">
+                    <div class="hero-image-frame">
+                        <div class="hero-image-glow"></div>
+                        <img src="assets/images/rahul-portrait.jpg" alt="Rahul Kumar" class="hero-profile-img">
+                    </div>
+                    <div class="hero-card-mesh">
+                        <div class="glass-card floating-card c1">
+                            <div class="card-glow"></div>
+                            <div class="card-hdr">
+                                <span class="card-lbl">DATABASE ENGINE</span>
+                                <span class="card-status green">Online</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>PostgreSQL</h3>
+                                <p>Optimized Queries & JSONB Storage</p>
+                                <div class="query-speed">99.8% cache hit ratio</div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card floating-card c2">
+                            <div class="card-glow"></div>
+                            <div class="card-hdr">
+                                <span class="card-lbl">API METRIC</span>
+                                <span class="card-status pulse-light">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>250ms Avg Response</h3>
+                                <p>Redis cached endpoints, async task queueing via Celery.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card floating-card c3">
+                            <div class="card-glow"></div>
+                            <div class="card-hdr">
+                                <span class="card-lbl">DOCKER ENVIRONMENT</span>
+                                <span class="card-status cyan">Running</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="env-tags">
+                                    <span class="env-tag">python:3.11-slim</span>
+                                    <span class="env-tag">nginx:alpine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#dashboard" class="scroll-down-indicator" aria-label="Scroll to dashboard statistics">
+                <span class="mouse-scroll-icon">
+                    <span class="scroll-wheel"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- 3. Dashboard Statistics Section -->
+        <section class="dashboard-section" id="dashboard">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">System Diagnostics</span>
+                    <h2 class="section-title">Engineering Dashboard</h2>
+                    <p class="section-desc">Key metrics and parameters monitoring my professional footprint.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.EXP</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="2">0</span>+</div>
+                        <div class="stat-label">Years Professional Experience</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 100%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.PROJ</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="15">0</span>+</div>
+                        <div class="stat-label">Deployments & Open Source</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 75%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.APIS</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="120">0</span>+</div>
+                        <div class="stat-label">Production REST Endpoints</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 90%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.COMMITS</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><line x1="6" y1="9" x2="6" y2="21"></line><path d="M9 6h9a4 4 0 0 1 4 4v3"></path></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="1450">0</span>+</div>
+                        <div class="stat-label">GitHub Commits (Last Year)</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 85%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.SOLVED</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="320">0</span>+</div>
+                        <div class="stat-label">Data Struct & Algo Solved</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 95%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.CLIENTS</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="10">0</span>+</div>
+                        <div class="stat-label">Happy Corporate Collaborators</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 60%;"></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card scroll-reveal fade-up" data-tilt>
+                        <div class="stat-glow"></div>
+                        <div class="stat-hdr">
+                            <span class="stat-tag">SYS.VISITS</span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </div>
+                        <div class="stat-value"><span class="counter" data-target="4982">0</span></div>
+                        <div class="stat-label">Unique Server Visitors</div>
+                        <div class="stat-graph">
+                            <span class="graph-bar" style="width: 80%;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Core Stack</span>
+                    <h2 class="section-title">Technical Skill Core</h2>
+                    <p class="section-desc">Interactive view of technologies, frameworks, and system protocols I master. Click a card to read integration context.</p>
+                    
+                    <div class="skills-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="backend">Backend Core</button>
+                        <button class="filter-btn" data-filter="database">Databases & Cache</button>
+                        <button class="filter-btn" data-filter="devops">DevOps & OS</button>
+                        <button class="filter-btn" data-filter="protocols">Protocols & Security</button>
+                    </div>
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Python Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="backend">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.25.18c-.9 0-1.8.08-2.68.25-2.73.53-3.1 1.84-3.1 4.02v1.73H12v.58H8.47C5.4 7 4.25 7.9 3.73 10.74c-.5 2.76.08 4.23 2.1 4.7l1.02.24v-2.07c0-2.45 1.57-3.9 4-3.9h3.6V6.15c0-1.86-.77-3.1-2.9-3.48-.44-.08-.88-.12-1.3-.12zm-3.66 1.8c.45 0 .8.36.8.8 0 .45-.35.8-.8.8-.44 0-.8-.35-.8-.8s.36-.8.8-.8zm7.14 7.6c-2.43 0-3.9 1.45-3.9 3.9v3.62c0 1.87.77 3.1 2.9 3.48 1.34.24 2.68.12 3.57-.26 2.73-.53 3.1-1.84 3.1-4.02v-1.73H20v-.58h3.53c3.07-.26 4.23-1.16 4.75-4 0-2.76-.08-4.23-2.1-4.7l-1.02-.24v2.07c0 2.45-1.57 3.9-4 3.9h-3.6V9.58zm3.66 10.8c.45 0 .8.36.8.8 0 .45-.35.8-.8.8-.44 0-.8-.35-.8-.8s.36-.8.8-.8z"/></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Python 3</h3>
+                                <span class="skill-level-text">Expert</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Advanced asynchronous Python programming (asyncio), OOP, generator functions, profiling, and memory optimization.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2.5 Years</div>
+                                <div><strong>Projects used:</strong> Full Stack E-Commerce Platform, Zapuza API Core</div>
+                                <div><strong>Confidence Level:</strong> 95%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Django Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="backend">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Django</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Highly familiar with Django ORM query optimization (select_related, prefetch_related), middleware engineering, signals, and security setups.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> Full Stack E-Commerce Platform, Zapuza Accounts API</div>
+                                <div><strong>Confidence Level:</strong> 90%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Django REST Framework Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="backend">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Django REST Framework</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Building robust REST APIs. Custom serializers, permission classes, JWT authentication integrations, pagination, and throttling handlers.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> CloudStore API, Auth Hub</div>
+                                <div><strong>Confidence Level:</strong> 92%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PostgreSQL Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="database">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">PostgreSQL</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Relational database design, indexes profiling, writing raw complex SQL, transaction handling, locks, and using JSONB for semi-structured records.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> Full Stack E-Commerce Platform, Zapuza DB schemas</div>
+                                <div><strong>Confidence Level:</strong> 88%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redis Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="database">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Redis</h3>
+                                <span class="skill-level-text">Intermediate</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">In-memory caching. Implementation of API response caching, rate-limiting algorithms, and broker queues for asynchronous background tasks.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 1.5 Years</div>
+                                <div><strong>Projects used:</strong> Real-Time Chat Application session state</div>
+                                <div><strong>Confidence Level:</strong> 80%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Docker Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="devops">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Docker</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Containerization of application microservices. Multi-stage builds for small images, Docker Compose orchestration for local development environments, volumes management.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> Docker-compose deployments for all major backends</div>
+                                <div><strong>Confidence Level:</strong> 85%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Linux Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="devops">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M12 2v9"></path><path d="m8 5 4-3 4 3"></path></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Linux / Nginx</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Bash scripting, server configuration, Linux system monitoring, systemd processes management, Nginx reverse proxy configuration, SSL setup with Certbot.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> Ubuntu server deployment, CORS settings, reverse proxies</div>
+                                <div><strong>Confidence Level:</strong> 85%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REST APIs Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="protocols">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">REST APIs & OpenAPI</h3>
+                                <span class="skill-level-text">Expert</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">Designing RESTful architecture. API versioning, error payload standardization, auto-documentation using Swagger/Redoc (drf-spectacular).</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2.5 Years</div>
+                                <div><strong>Projects used:</strong> Public Developer Portal APIs</div>
+                                <div><strong>Confidence Level:</strong> 95%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JWT Auth Card -->
+                    <div class="skill-card scroll-reveal fade-up" data-category="protocols">
+                        <div class="skill-main">
+                            <div class="skill-icon-wrap">
+                                <svg class="skill-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">JWT Security</h3>
+                                <span class="skill-level-text">Advanced</span>
+                            </div>
+                            <span class="skill-chevron">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </div>
+                        <div class="skill-expanded-content">
+                            <p class="skill-description">JSON Web Tokens handling, sliding window session strategies, blacklisting compromised tokens via Redis keyspaces, HTTPOnly cookies setup.</p>
+                            <div class="skill-meta">
+                                <div><strong>Experience:</strong> 2 Years</div>
+                                <div><strong>Projects used:</strong> SSO Service, Single Sign On Gateway</div>
+                                <div><strong>Confidence Level:</strong> 90%</div>
+                            </div>
+                            <div class="skill-progress-bar-wrap">
+                                <div class="skill-progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Philosophy Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-wrapper">
+                    <div class="about-content scroll-reveal fade-right">
+                        <span class="section-subtitle">Developer Profile</span>
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Engineering Philosophy</h2>
+                        <p class="about-bio">
+                            I believe in building backend systems that are simple, scalable, and resilient. My approach centers on query performance profiles, caching keyspaces strategy, and automated testing loops. Code is written for human clarity first, and CPU efficiency second.
+                        </p>
+                        
+                        <div class="reads-card glass-card">
+                            <div class="reads-hdr">
+                                <svg class="reads-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <h4>CURRENTLY STUDYING & INFLUENCES</h4>
+                            </div>
+                            <ul class="reads-list">
+                                <li>
+                                    <strong>"The Go-Giver"</strong> by Bob Burg & John David Mann
+                                    <span>Focus: Adding exceptional value to clients & team scaling</span>
+                                </li>
+                                <li>
+                                    <strong>"Designing Data-Intensive Applications"</strong> by Martin Kleppmann
+                                    <span>Focus: Distributed systems, partitioning, and storage patterns</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="about-visual scroll-reveal fade-left">
+                        <div class="about-image-frame">
+                            <div class="about-image-glow"></div>
+                            <img src="assets/images/rahul-reading.jpg" alt="Rahul Kumar studying code" class="about-profile-img">
+                            <div class="about-image-caption">STUDYING IN THE LAB - BENGALURU</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Experience Timeline Section -->
+        <section class="experience-section" id="experience">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Career Path</span>
+                    <h2 class="section-title">Timeline History</h2>
+                    <p class="section-desc">A log of my professional engagements and engineering evolution.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-track"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item scroll-reveal fade-right">
+                        <div class="timeline-marker">
+                            <div class="marker-dot pulsing"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">April 2024 - Present</span>
+                            <h3 class="timeline-role">Backend Developer</h3>
+                            <h4 class="timeline-company">INDIASSETZ, Bangalore</h4>
+                            <p class="timeline-description">
+                                Built and maintained scalable REST APIs using Django REST Framework for client onboarding, property management, order lifecycle, and payments. Engineered Node.js utilities and integrated payment gateways.
+                            </p>
+                            <ul class="timeline-highlights">
+                                <li>Reduced API response time by 30–40% through index optimization and N+1 query resolutions (`select_related`, `prefetch_related`).</li>
+                                <li>Integrated third-party payment gateways (Razorpay) for secure payment validations and webhook callbacks.</li>
+                                <li>Automated test scripts and workflows execution using PyTest and Selenium.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item scroll-reveal fade-left">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Feb 2024 - Mar 2024</span>
+                            <h3 class="timeline-role">Python/Django Developer</h3>
+                            <h4 class="timeline-company">Zapuza</h4>
+                            <p class="timeline-description">
+                                Developed REST APIs with token validation and role-based access control, focusing on backend speed efficiency and modular code architecture.
+                            </p>
+                            <ul class="timeline-highlights">
+                                <li>Engineered clean REST API endpoints for user accounts and profile data management.</li>
+                                <li>Optimized backend performance through fast JSON serializers and database connections utilization.</li>
+                                <li>Followed clean coding patterns and modular design guidelines for maintainable services.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item scroll-reveal fade-right">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Aug 2022 - Jan 2023</span>
+                            <h3 class="timeline-role">Web Development Trainee</h3>
+                            <h4 class="timeline-company">Excellence Technology, Mohali</h4>
+                            <p class="timeline-description">
+                                Assisted backend senior developers in web API development and debugging database locks, writing functional unit tests.
+                            </p>
+                            <ul class="timeline-highlights">
+                                <li>Collaborated in testing, bug fixing, and documenting backend core procedures.</li>
+                                <li>Developed custom helpers for REST APIs, troubleshooting database call delays.</li>
+                                <li>Worked on functional unit testing pipelines.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Featured Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Works Portfolio</span>
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-desc">Production-grade systems I built from concept to deployment. Click a project to open its deep architectural dashboard.</p>
+                    
+                    <div class="projects-filter">
+                        <button class="project-filter-btn active" data-filter="all">All Projects</button>
+                        <button class="project-filter-btn" data-filter="scalable">Scalable Systems</button>
+                        <button class="project-filter-btn" data-filter="realtime">Real-Time Apps</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1: Full Stack E-Commerce Platform -->
+                    <div class="project-card scroll-reveal fade-up" data-category="scalable" data-project-id="ecommerce">
+                        <div class="project-card-image-wrapper">
+                            <!-- Visual mock of a dashboard / terminal using code styled CSS -->
+                            <div class="project-visual-mock logiflow-mock">
+                                <div class="terminal-mock-header">
+                                    <span>E-Commerce Core API v2.1.0</span>
+                                    <span class="mock-status-pill green">HEALTHY</span>
+                                </div>
+                                <div class="terminal-mock-code">
+                                    <p class="line-c"><span class="t-key">GET</span> /api/v1/products/ <span class="t-num">200 OK</span> <span class="t-time">24ms</span></p>
+                                    <p class="line-c"><span class="t-key">POST</span> /api/v1/orders/ <span class="t-num">201 Created</span> <span class="t-time">56ms</span></p>
+                                    <p class="line-c"><span class="t-key">PGSQL</span> query optimized index scan: <span class="t-str">"idx_prod_cat"</span></p>
+                                    <p class="line-c"><span class="t-key">REACT</span> query loaded state: <span class="t-str">"cart_items"</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <span class="project-card-tag">Web Application & APIs</span>
+                            <h3 class="project-card-title">Full Stack E-Commerce Platform</h3>
+                            <p class="project-card-desc">A full-featured commerce store built with Django REST Framework and React.js. Features modular authentication layers, products filtering, pagination, and stock lock handling.</p>
+                            <div class="project-card-tech">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>DRF</span>
+                                <span>React.js</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-card-footer">
+                                <button class="btn-project-detail">View Architecture & Deep Dive</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Real-Time Chat Application -->
+                    <div class="project-card scroll-reveal fade-up" data-category="realtime" data-project-id="chat">
+                        <div class="project-card-image-wrapper">
+                            <div class="project-visual-mock querypool-mock">
+                                <div class="terminal-mock-header">
+                                    <span>Socket.IO Chat Daemon v3.0</span>
+                                    <span class="mock-status-pill blue">ACTIVE</span>
+                                </div>
+                                <div class="terminal-mock-code">
+                                    <p class="line-c">> SOCKET connection request: "usr_active_902"</p>
+                                    <p class="line-c">> EVENT emit: "message_sent" -> thread_12</p>
+                                    <p class="line-c">> Session state synchronized with Redis store</p>
+                                    <p class="line-c">> Database connections: Active (14) Idle (6)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <span class="project-card-tag">High-Throughput Socket Server</span>
+                            <h3 class="project-card-title">Real-Time Chat Application</h3>
+                            <p class="project-card-desc">An event-driven messaging service using Node.js and Socket.IO. Handles active user connections concurrently, serializes chat sessions with Redis caches, and saves logs to MongoDB.</p>
+                            <div class="project-card-tech">
+                                <span>Node.js</span>
+                                <span>Socket.IO</span>
+                                <span>Express</span>
+                                <span>Redis</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-card-footer">
+                                <button class="btn-project-detail">View Architecture & Deep Dive</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal (Simulated Single Product Page Drawer) -->
+        <div class="project-drawer-overlay" id="project-drawer">
+            <div class="project-drawer-container">
+                <button class="drawer-close-btn" id="drawer-close" aria-label="Close Project Drawer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div class="drawer-scroll-wrap" id="drawer-content">
+                    <!-- Loaded dynamically via JavaScript based on clicked project -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Architecture Viewer Section -->
+        <section class="architecture-section" id="architecture">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">System Blueprints</span>
+                    <h2 class="section-title">Interactive Topology Viewer</h2>
+                    <p class="section-desc">Click on any node in the system diagram below to reveal documentation and implementation details.</p>
+                </div>
+
+                <div class="architecture-display scroll-reveal fade-up">
+                    <!-- Flow nodes -->
+                    <div class="arch-canvas">
+                        <div class="arch-node clickable" data-node="nextjs" id="node-nextjs">
+                            <div class="node-icon">UI</div>
+                            <div class="node-name">Next.js Web</div>
+                            <span class="pulse-node"></span>
+                        </div>
+                        
+                        <div class="arch-node clickable" data-node="nginx" id="node-nginx">
+                            <div class="node-icon">PROXY</div>
+                            <div class="node-name">Nginx Proxy</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="django" id="node-django">
+                            <div class="node-icon">APP</div>
+                            <div class="node-name">Django Core</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="drf" id="node-drf">
+                            <div class="node-icon">API</div>
+                            <div class="node-name">DRF Controllers</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="redis" id="node-redis">
+                            <div class="node-icon">CACHE</div>
+                            <div class="node-name">Redis Store</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="postgres" id="node-postgres">
+                            <div class="node-icon">DB</div>
+                            <div class="node-name">PostgreSQL</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="docker" id="node-docker">
+                            <div class="node-icon">ENV</div>
+                            <div class="node-name">Docker Engine</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <div class="arch-node clickable" data-node="cicd" id="node-cicd">
+                            <div class="node-icon">PIPE</div>
+                            <div class="node-name">GitLab CI / CD</div>
+                            <span class="pulse-node"></span>
+                        </div>
+
+                        <!-- Connector Lines Container -->
+                        <svg class="arch-lines-svg" id="arch-lines-svg"></svg>
+                    </div>
+
+                    <!-- Information detail panel -->
+                    <div class="arch-details-panel" id="arch-details-panel">
+                        <div class="panel-placeholder" id="panel-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="placeholder-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            <h3>System Topology Detail</h3>
+                            <p>Click any node in the architecture flow above to inspect configuration specs, middleware hooks, and deployment strategies.</p>
+                        </div>
+                        <div class="panel-content hidden" id="panel-content">
+                            <h3 class="panel-title" id="panel-title">Node Title</h3>
+                            <div class="panel-body">
+                                <p class="panel-desc" id="panel-desc">Node Description will load here.</p>
+                                <h4 class="panel-sub-hdr">Deployment Spec</h4>
+                                <pre class="panel-code"><code id="panel-code"># code configuration snippet</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. API Playground Section -->
+        <section class="api-playground-section" id="api-playground">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Live Sandbox</span>
+                    <h2 class="section-title">API Explorer Console</h2>
+                    <p class="section-desc">Query my backend endpoints dynamically. Click a request command to simulate network calls to my portfolio backend.</p>
+                </div>
+
+                <div class="api-explorer scroll-reveal fade-up">
+                    <div class="explorer-sidebar">
+                        <h4 class="sidebar-title">REST Routes</h4>
+                        <div class="api-routes-list">
+                            <button class="api-route-btn active" data-method="GET" data-endpoint="/projects">
+                                <span class="method get">GET</span> <span class="route">/projects</span>
+                            </button>
+                            <button class="api-route-btn" data-method="GET" data-endpoint="/experience">
+                                <span class="method get">GET</span> <span class="route">/experience</span>
+                            </button>
+                            <button class="api-route-btn" data-method="GET" data-endpoint="/skills">
+                                <span class="method get">GET</span> <span class="route">/skills</span>
+                            </button>
+                            <button class="api-route-btn" data-method="POST" data-endpoint="/contact">
+                                <span class="method post">POST</span> <span class="route">/contact</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="explorer-main">
+                        <div class="explorer-header">
+                            <div class="address-bar">
+                                <span class="method-tag" id="explorer-method">GET</span>
+                                <input type="text" class="explorer-url-input" id="explorer-url" value="https://api.rahulkumar.dev/v1/projects" readonly>
+                                <button class="btn-send-api" id="btn-send-api">Send Request</button>
+                            </div>
+                        </div>
+
+                        <!-- Post Body Parameter (Only visible when POST /contact is active) -->
+                        <div class="explorer-body-params hidden" id="explorer-body-params">
+                            <div class="params-header">POST Request Body (JSON)</div>
+                            <textarea class="params-textarea" id="params-textarea">
+{
+  "name": "Recruiter Name",
+  "email": "hiring@company.com",
+  "message": "Let's set up an interview!"
+}
+                            </textarea>
+                        </div>
+
+                        <div class="explorer-response">
+                            <div class="response-header">
+                                <span class="res-lbl">RESPONSE BODY</span>
+                                <span class="res-status green" id="response-status">200 OK</span>
+                                <span class="res-time" id="response-time">12ms</span>
+                            </div>
+                            <pre class="response-pre"><code class="json-code" id="response-code">
+{
+  "status": "success",
+  "data": []
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Terminal Section -->
+        <section class="terminal-section" id="terminal-section">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Command Line Interface</span>
+                    <h2 class="section-title">Linux Interactive Console</h2>
+                    <p class="section-desc">For command-line power users. Query the system database via standard Unix command utilities. Type 'help' to begin.</p>
+                </div>
+
+                <div class="terminal-window scroll-reveal fade-up" id="terminal-window">
+                    <div class="terminal-window-header">
+                        <div class="terminal-controls">
+                            <span class="term-control red"></span>
+                            <span class="term-control yellow"></span>
+                            <span class="term-control green"></span>
+                        </div>
+                        <div class="terminal-window-title">guest@server.rahulkumar.dev: ~</div>
+                        <div class="terminal-layout-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        </div>
+                    </div>
+
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-output" id="terminal-output">
+                            <p class="output-row system">Welcome to Rahul's Dev Shell (v2.4.0-stable)</p>
+                            <p class="output-row system">System: Ubuntu 22.04.2 LTS (Kernel 5.15.0-72-generic)</p>
+                            <p class="output-row system">Type <span class="cmd-highlight">help</span> to list list of available shell commands.</p>
+                            <br>
+                        </div>
+                        
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">guest@rahul-shell:~$</span>
+                            <div class="input-wrapper">
+                                <input type="text" class="terminal-hidden-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                                <span class="terminal-styled-input" id="terminal-styled-input"></span>
+                                <span class="terminal-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Engineering Blogs Section -->
+        <section class="blogs-section" id="blogs">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Written Insights</span>
+                    <h2 class="section-title">Engineering Journals</h2>
+                    <p class="section-desc">Deep dives into Python execution architecture, scaling bottlenecks, and database design practices.</p>
+                </div>
+
+                <div class="blogs-grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card scroll-reveal fade-up">
+                        <div class="blog-image-wrapper">
+                            <div class="blog-mock-cover code-theme">
+                                <span class="blog-cover-tag">&lt;Python /&gt;</span>
+                                <div class="cover-code-lines">
+                                    <p>def optimize_query(queryset):</p>
+                                    <p>    return queryset.select_related(</p>
+                                    <p>        'author', 'profile'</p>
+                                    <p>    ).prefetch_related('tags')</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Database Tuning</span>
+                                <span class="blog-read-time">6 min read</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#" class="blog-link-title">Combating the N+1 Query Defect in Django ORM</a></h3>
+                            <p class="blog-desc">An analytical evaluation of database loading strategies inside Django rest serialization layers, measuring database call times and memory usage profile gains.</p>
+                            <div class="blog-footer">
+                                <span class="blog-date">June 24, 2026</span>
+                                <span class="blog-arrow">→</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card scroll-reveal fade-up">
+                        <div class="blog-image-wrapper">
+                            <div class="blog-mock-cover redis-theme">
+                                <span class="blog-cover-tag">&lt;Caching /&gt;</span>
+                                <div class="cover-code-lines">
+                                    <p>class RedisRateLimiter:</p>
+                                    <p>    def is_allowed(self, user_id):</p>
+                                    <p>        pipe = self.redis.pipeline()</p>
+                                    <p>        # sliding window counter</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">System Design</span>
+                                <span class="blog-read-time">8 min read</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#" class="blog-link-title">Sliding Window Rate Limiters via Redis Pipelines</a></h3>
+                            <p class="blog-desc">Implementing transaction-safe atomic rate limits inside custom middleware, avoiding concurrent state race conditions under high parallel requests.</p>
+                            <div class="blog-footer">
+                                <span class="blog-date">May 12, 2026</span>
+                                <span class="blog-arrow">→</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card scroll-reveal fade-up">
+                        <div class="blog-image-wrapper">
+                            <div class="blog-mock-cover docker-theme">
+                                <span class="blog-cover-tag">&lt;DevOps /&gt;</span>
+                                <div class="cover-code-lines">
+                                    <p>FROM python:3.11-slim as builder</p>
+                                    <p>COPY requirements.txt .</p>
+                                    <p>RUN pip wheel --no-cache-dir</p>
+                                    <p># Multi stage release</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-tag">DevOps</span>
+                                <span class="blog-read-time">5 min read</span>
+                            </div>
+                            <h3 class="blog-title"><a href="#" class="blog-link-title">Production Docker Build Multi-Staging Optimization</a></h3>
+                            <p class="blog-desc">How to slash production image weight from 920MB down to 142MB while maintaining isolation of compiler binaries and packages dependencies.</p>
+                            <div class="blog-footer">
+                                <span class="blog-date">March 08, 2026</span>
+                                <span class="blog-arrow">→</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="section-header scroll-reveal fade-up">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">Communicate Connection</h2>
+                    <p class="section-desc">Submit a mock client query or initiate email handshakes. I am responsive to active opportunities.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Contact Form Card -->
+                    <div class="contact-card scroll-reveal fade-right">
+                        <div class="contact-card-hdr">
+                            <span class="availability-status green">
+                                <span class="pulsing-node"></span> Ready for contracts
+                            </span>
+                            <h3>Send Message</h3>
+                        </div>
+                        <form class="contact-form" id="portfolio-contact-form">
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">Identified Call Name</label>
+                                <input type="text" id="form-name" class="form-input" placeholder="e.g., Jane Doe" required>
+                                <span class="input-border"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email" class="form-label">Return Communication Email</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="e.g., jane@company.com" required>
+                                <span class="input-border"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-msg" class="form-label">Message Payload</label>
+                                <textarea id="form-msg" class="form-textarea" placeholder="Hello Rahul, I would love to collaborate..." required></textarea>
+                                <span class="input-border"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-contact">
+                                <span>Dispatch Payload</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                            <div class="form-status-alert" id="form-status-alert"></div>
+                        </form>
+                    </div>
+
+                    <!-- Connect Information Card -->
+                    <div class="contact-info-card scroll-reveal fade-left">
+                        <div class="info-blocks">
+                            <div class="info-block">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="info-details">
+                                    <h4>DIRECT EMAIL</h4>
+                                    <a href="mailto:smartyrahul8696@gmail.com">smartyrahul8696@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div class="info-details">
+                                    <h4>GEOGRAPHIC LOCATION</h4>
+                                    <p>Bengaluru, India (UTC +5:30)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Interactive Placeholder -->
+                        <div class="map-placeholder">
+                            <div class="map-grid"></div>
+                            <div class="map-radar">
+                                <span class="radar-circle rc1"></span>
+                                <span class="radar-circle rc2"></span>
+                                <span class="radar-ping"></span>
+                            </div>
+                            <div class="map-label">LOCATION: BENGALURU, INDIA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 12. Footer -->
+    <footer class="footer">
+        <div class="footer-wave-container">
+            <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>Rahul.K<span class="logo-bracket">/&gt;</span>
+                </a>
+                <p>Engineering premium microservices, database clusters, and elegant API infrastructure.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <a href="#hero">Home</a>
+                <a href="#dashboard">Statistics</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Rahul Kumar. All rights reserved. Designed for premium performance.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:smartyrahul8696@gmail.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Scroll Back To Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/typing.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/terminal.js"></script>
+    <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
